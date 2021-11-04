@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'Main.apps.MainConfig',
     'qr_code',
     'crispy_forms',
+    'django_email_verification'
 ]
 
 MIDDLEWARE = [
@@ -128,5 +129,28 @@ STATIC_URL = '/static/'
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 STATICFILES_DIRS = [
-   os.path.join(BASE_DIR, "static"),
+    os.path.join(BASE_DIR, "static"),
 ]
+
+
+def verified_callback(user):
+    user.is_active = True
+
+
+EMAIL_VERIFIED_CALLBACK = verified_callback
+DEFAULT_FROM_EMAIL = 'noreply@DaLinci.com'
+EMAIL_FROM_ADDRESS = 'noreply@DaLinci.com'
+EMAIL_MAIL_SUBJECT = 'Confirm your email'
+EMAIL_MAIL_HTML = 'email/mail.html'
+EMAIL_MAIL_PLAIN = 'email/mail.txt'
+EMAIL_TOKEN_LIFE = 60 * 60
+EMAIL_PAGE_TEMPLATE = 'email/confirm_template.html'
+EMAIL_PAGE_DOMAIN = 'http://localhost:8000/'
+
+# For Django Email Backend
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'www.reks6866@gmail.com'
+EMAIL_HOST_PASSWORD = 'zorwisjaqslqgbuj'
+DEFAULT_FROM_EMAIL = 'www.reks6866@gmail.com'
+EMAIL_USE_TLS = True

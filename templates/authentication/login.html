@@ -3,7 +3,7 @@
 {% load crispy_forms_tags %}
 
 {% block main %}
-    <div class="card" style="width: 310px;">
+    <div class="card" style="width: 310px; margin: 0 auto;">
         <div class="card-body">
             <h4 class="card-title">{{ center_text }}</h4>
 
@@ -13,7 +13,7 @@
                 {{ form|crispy }}
                 <br>
                 <div class="row-md-6">
-                    <button type="submit" class="btn btn-primary">Войти</button>
+                    <button type="submit" class="btn btn-primary">{{ button_text }}</button>
                     <button type="submit" class="btn btn-primary">На главную</button>
                 </div>
             </form>

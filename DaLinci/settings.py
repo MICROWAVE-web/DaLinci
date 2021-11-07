@@ -137,9 +137,9 @@ def verified_callback(user):
     user.is_active = True
 
 
+EMAIL = 'playalexei@yandex.ru'
 EMAIL_VERIFIED_CALLBACK = verified_callback
-DEFAULT_FROM_EMAIL = 'noreply@DaLinci.com'
-EMAIL_FROM_ADDRESS = 'noreply@DaLinci.com'
+EMAIL_FROM_ADDRESS = EMAIL
 EMAIL_MAIL_SUBJECT = 'Confirm your email'
 EMAIL_MAIL_HTML = 'email/mail.html'
 EMAIL_MAIL_PLAIN = 'email/mail.txt'
@@ -148,9 +148,10 @@ EMAIL_PAGE_TEMPLATE = 'email/confirm_template.html'
 EMAIL_PAGE_DOMAIN = 'http://localhost:8000/'
 
 # For Django Email Backend
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = 'smtp.yandex.ru'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'www.reks6866@gmail.com'
-EMAIL_HOST_PASSWORD = 'zorwisjaqslqgbuj'
-DEFAULT_FROM_EMAIL = 'www.reks6866@gmail.com'
+EMAIL_HOST_USER = EMAIL
+DEFAULT_FROM_EMAIL = EMAIL
+EMAIL_HOST_PASSWORD = 'qjpsgqguasrvmwjq'
 EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False

@@ -22,7 +22,7 @@ from .views import *  # optimize
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/', CustomLoginView.as_view()),
-    path('reg/', CustomRegView.as_view()),
+    path('reg/', CustomRegView.as_view(), name='registration'),
     path('email/', include(email_urls)),
-    path('test/', test),
+    path('test/', test, name='test'),
 ]

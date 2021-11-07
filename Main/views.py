@@ -12,6 +12,12 @@ class CustomRegView(View):
         if form.is_valid():
             user = form.save()
             send_email(user)
+            context = {
+                'replaceMessage': 'Подтверждение регистрации отправлено на почту '
+                               f'{form.cleaned_data["email"]}',
+                'title': 'DaLinci.com - Регистрация'
+            }
+            return render(request, 'authentication/go_mail.html', context)
         else:
             context = {
                 'center_text': 'Регистрация',

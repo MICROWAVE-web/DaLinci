@@ -68,14 +68,29 @@ def get_hash_link(request, *args, **kwargs):
     form = ServiceForm(request.POST)
     if form.is_valid():
         try:
-            abbrlink = form.save(commit=False)
-            if request.user.is_authenticated:
+            if not request.user.is_authenticated and AbbreviatedLink.objects.filter(parent_link=form.cleaned_data['parent_link'], owner__isnull=True).exists():
+                print('1')
+                abbrlink = AbbreviatedLink.objects.get(parent_link=form.cleaned_data['parent_link'], owner__isnull=True)
+                context = {
+                    'title': 'DaLinci.com',
+                    'abbrlink': f'localhost:8000/r/{abbrlink.urlhash}',
+                }
+            elif not request.user.is_authenticated:
+                print('2')
+                abbrlink = form.save()
+                context = {
+                    'title': 'DaLinci.com',
+                    'abbrlink': f'localhost:8000/r/{abbrlink.urlhash}',
+                }
+            else:
+                print('3')
+                abbrlink = form.save(commit=False)
                 abbrlink.owner = request.user
-            abbrlink = form.save()
-            context = {
-                'title': 'DaLinci.com',
-                'abbrlink': f'localhost:8000/r/{abbrlink.urlhash}',
-            }
+                abbrlink = form.save()
+                context = {
+                    'title': 'DaLinci.com',
+                    'abbrlink': f'localhost:8000/r/{abbrlink.urlhash}',
+                }
             return JsonResponse(context)
         except django.db.utils.IntegrityError:
             context = {

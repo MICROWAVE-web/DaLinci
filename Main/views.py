@@ -113,6 +113,7 @@ def get_client_ip(request):
     return ip
 
 
+
 def link_redirect(request, urlhash):
     try:
         redirect_obj = AbbreviatedLink.objects.get(urlhash=urlhash)

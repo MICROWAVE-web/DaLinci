@@ -1,0 +1,21 @@
+{% extends  'authentication/base.html' %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
+
+
+{% block meta %}
+    {% if success %}
+        <meta http-equiv="refresh" content="2; URL={% url 'login' %}"/>
+    {% else %}
+        <meta http-equiv="refresh" content="6; URL={% url 'registration' %}"/>
+    {% endif %}
+{% endblock %}
+
+
+{% block replaceMessageBlock %}
+    {% if success %}
+        Спасибо, регистрация завершена
+    {% else %}
+        Извените, ваш токен неверен или истёк
+    {% endif %}
+{% endblock %}

@@ -123,7 +123,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'Main.User'
 
-LOGIN_REDIRECT_URL = '/test/'
+LOGIN_REDIRECT_URL = '/service/'
 
 STATIC_URL = '/static/'
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))

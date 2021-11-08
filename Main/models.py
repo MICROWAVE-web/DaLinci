@@ -23,7 +23,7 @@ class User(AbstractUser):
 
 
 class AbbreviatedLink(models.Model):
-    owner = models.ForeignKey(User, on_delete=models.PROTECT, blank=True, null=True)
+    owner = models.ForeignKey(User, on_delete=models.PROTECT, null=True)
     created_time_and_date = models.DateTimeField(auto_now_add=True)
     parent_link = models.URLField(_('url'), max_length=300)
     counter = models.PositiveIntegerField(default=0)
@@ -39,6 +39,9 @@ class AbbreviatedLink(models.Model):
             while AbbreviatedLink.objects.filter(urlhash=self.urlhash).exists():
                 self.urlhash = self.id_generator()
         super(AbbreviatedLink, self).save()
+
+    class Meta:
+        unique_together = ('owner', 'parent_link')
 
 
 class Transition(models.Model):

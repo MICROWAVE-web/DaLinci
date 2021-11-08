@@ -1,3 +1,4 @@
+import django
 from django.contrib.auth.views import LoginView
 from django.http import JsonResponse, HttpResponseRedirect, HttpResponseNotFound
 from django.shortcuts import render
@@ -62,19 +63,30 @@ class ServiceView(View):
         }
         return render(request, 'service/service.html', context)
 
-    @staticmethod
-    def post(request, *args, **kwargs):
-        form = ServiceForm(request.POST)
-        if form.is_valid():
+
+def get_hash_link(request, *args, **kwargs):
+    form = ServiceForm(request.POST)
+    if form.is_valid():
+        try:
+            abbrlink = form.save(commit=False)
+            if request.user.is_authenticated:
+                abbrlink.owner = request.user
             abbrlink = form.save()
             context = {
                 'title': 'DaLinci.com',
-                'abbrlink': f'http://192.168.1.40/r/{abbrlink.urlhash}',
+                'abbrlink': f'localhost:8000/r/{abbrlink.urlhash}',
             }
             return JsonResponse(context)
-        else:
-            context = {}
-            return render(request, 'authentication/login.html', context)
+        except django.db.utils.IntegrityError:
+            context = {
+                'error': 'You already have the same link!',
+            }
+            return JsonResponse(context)
+    else:
+        context = {
+            'error': 'Form invalid!',
+        }
+        return JsonResponse(context)
 
 
 def get_client_ip(request):

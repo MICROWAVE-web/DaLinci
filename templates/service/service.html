@@ -20,19 +20,26 @@
         <br>
         <br>
         <br>
-        <form method="post">
-            {% csrf_token %}
-            <input type="hidden" name="next" value="{{ next }}">
-            <div class="relative mr-6 my-2">
-                {{ form|crispy }}
-            </div>
-            <br>
-            <div class="row-md-6">
-                <button type="submit" class="btn btn-primary"
-                        style="background-color: #667eea; border: 1px solid #6079da">Получить ссылку
-                </button>
-            </div>
-        </form>
+        <div class="curved-div-inner">
+            <form method="post" action="{% url 'get_hash_link' %}" id="service_form">
+                {% csrf_token %}
+                <input type="hidden" name="next" value="{{ next }}">
+                <div class="relative mr-6 my-2 flex flex-row" style="display: inline-flex;">
+                    {{ form|crispy }}
+                    <button class='button_close' type="reset">✖</button>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="row-md-6">
+                    <button type="submit" class="btn btn-primary"
+                            style="background-color: #667eea;
+                        border: 1px solid #6079da;
+                        font-weight: bold;">Продолжить
+                    </button>
+                </div>
+            </form>
+        </div>
     </div>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path fill="#fff" fill-opacity="1"
@@ -42,4 +49,5 @@
 
 {% block meta %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/service.css' %}">
+    <script src="{% static 'js/ajax_form.js' %}"></script>
 {% endblock %}

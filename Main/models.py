@@ -23,10 +23,10 @@ class User(AbstractUser):
 
 
 class AbbreviatedLink(models.Model):
-    owner = models.ForeignKey(User, on_delete=models.PROTECT)
+    owner = models.ForeignKey(User, on_delete=models.PROTECT, blank=True, null=True)
     created_time_and_date = models.DateTimeField(auto_now_add=True)
     parent_link = models.URLField(_('url'), max_length=300)
-    counter = models.PositiveIntegerField()
+    counter = models.PositiveIntegerField(default=0)
     urlhash = models.CharField(max_length=6, null=True, blank=True, unique=True)
 
     @staticmethod

@@ -21,8 +21,10 @@ from .views import *  # optimize
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('login/', CustomLoginView.as_view()),
+    path('login/', CustomLoginView.as_view(), name='login'),
     path('reg/', CustomRegView.as_view(), name='registration'),
+    path('service/', ServiceView.as_view(), name='service'),
     path('email/', include(email_urls)),
     path('test/', test, name='test'),
+    path('r/<slug:urlhash>/', link_redirect, name='redirect'),
 ]

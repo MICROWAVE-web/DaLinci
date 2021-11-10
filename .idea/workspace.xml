@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ce2d2a41-c1fd-4825-90ac-13b55935c280" name="Changes" comment="8.11.21" />
+    <list default="true" id="ce2d2a41-c1fd-4825-90ac-13b55935c280" name="Changes" comment="8.11.21">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/service/control-base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/service/control-base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/service/service.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/service/service.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -152,6 +157,8 @@
       <workItem from="1636359999545" duration="19927000" />
       <workItem from="1636386807639" duration="1743000" />
       <workItem from="1636399160163" duration="930000" />
+      <workItem from="1636447502091" duration="7524000" />
+      <workItem from="1636540264927" duration="1730000" />
     </task>
     <task id="LOCAL-00001" summary="4.11.21">
       <created>1636055867654</created>

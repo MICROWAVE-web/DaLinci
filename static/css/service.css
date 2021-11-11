@@ -1,0 +1,100 @@
+.curved-div {
+    display: flex;
+    padding-top: 20px;
+    padding-right: 120px;
+    padding-left: 120px;
+    background-color: #fff;
+    color: #FFF;
+    height: -webkit-fill-available;
+    text-align: center;
+    transition: all 0.2s ease, background-position 1ms;
+}
+
+.curved-div-vh-auto {
+    display: inline-grid;
+    padding-top: 20px;
+    padding-right: 120px;
+    padding-left: 120px;
+    background-color: #fff;
+    color: #FFF;
+    text-align: center;
+    transition: all 0.2s ease, background-position 1ms;
+    height: auto;
+}
+
+.curved-div h1 {
+    font-size: 6rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.curved-div p {
+    font-size: 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.curved-div-inner {
+    height: auto;
+}
+
+.curved-div-inner-dialog {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.dialog_part_left {
+    max-width: 550px;
+    margin-right: 25%;
+}
+
+.dialog_part_right {
+    max-width: 550px;
+    margin-left: 25%;
+}
+
+.form_input {
+    width: 500px;
+    color: #4a5568;
+    outline: none;
+    background: #e2e8f0;
+}
+
+button:active, button:focus {
+    outline: none;
+}
+
+button::-moz-focus-inner {
+    border: 0;
+}
+
+.button_close {
+    margin-left: 10px;
+    font-size: 30px;
+    color: #667eea;
+    transition: 0.1s;
+}
+
+.button_close:active {
+    margin-left: 10px;
+    font-size: 30px;
+    color: #556ad3;
+}
+
+.down-arrow {
+    margin: 0 auto;
+    height: 100px;
+}
+
+.down-arrow:hover {
+    cursor: pointer;
+}
+.qrcode {
+    height: auto;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}

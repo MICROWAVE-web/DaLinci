@@ -5,7 +5,6 @@
     padding-left: 120px;
     background-color: #fff;
     color: #FFF;
-    height: -webkit-fill-available;
     text-align: center;
     transition: all 0.2s ease, background-position 1ms;
 }
@@ -97,4 +96,20 @@ button::-moz-focus-inner {
     align-items: center;
     justify-content: center;
     align-content: center;
+}
+#menyoo a {
+    color: black !important;
+    transition: 0.2s;
+    text-decoration: none;
+}
+#menyoo a:active {
+    color: #667eea !important;
+}
+#menyoo a:hover {
+    color: #667eea !important;
+}
+
+table a {
+    color: #667eea !important;
+    text-decoration: none;
 }

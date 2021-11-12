@@ -1,12 +1,15 @@
 import django
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView
 from django.http import JsonResponse, HttpResponseRedirect, HttpResponseNotFound
 from django.shortcuts import render
 from django.views import View
 from django_email_verification import send_email
+from django_tables2 import RequestConfig
 
 from .forms import UserRegistrationForm, ServiceForm
 from .models import AbbreviatedLink, Transition
+from .tables import AbbreviatedLinkTable
 
 
 class CustomRegView(View):
@@ -64,13 +67,30 @@ class ServiceView(View):
         return render(request, 'service/service.html', context)
 
 
+class LinksTableView(View):
+    @staticmethod
+    @login_required
+    def get(request, *args, **kwargs):
+        data = AbbreviatedLink.objects.filter(owner__email=request.user.email)
+        table = AbbreviatedLinkTable(data, template_name='django_tables2/semantic.html')
+        RequestConfig(request, paginate={"per_page": 15}).configure(table)
+        context = {
+            'title': 'DaLinci.com',
+            'form': ServiceForm(),
+            'table': table
+        }
+        return render(request, 'service/links_table.html', context)
+
+
 def get_hash_link(request, *args, **kwargs):
     form = ServiceForm(request.POST)
     if form.is_valid():
         try:
-            if not request.user.is_authenticated and AbbreviatedLink.objects.filter(parent_link=form.cleaned_data['parent_link'], owner__isnull=True).exists():
+            if not request.user.is_authenticated and AbbreviatedLink.objects.filter(
+                    parent_link=form.cleaned_data['parent_link'], owner__isnull=True).exists():
                 print('1')
-                abbrlink = AbbreviatedLink.objects.get(parent_link=form.cleaned_data['parent_link'], owner__isnull=True)
+                abbrlink = AbbreviatedLink.objects.get(parent_link=form.cleaned_data['parent_link'],
+                                                       owner__isnull=True)
                 context = {
                     'title': 'DaLinci.com',
                     'abbrlink': f'localhost:8000/r/{abbrlink.urlhash}',

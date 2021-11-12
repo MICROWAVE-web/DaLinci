@@ -12,8 +12,9 @@ $(document).ready(function () {
                 block.promise().done(function () {
                     frm.hide();
                     if (data["error"] === "You already have the same link!") {
+                        let addr = window.location;
                         block.html(`
-                        <div style="color: rgba(0, 0, 0, 0.5); font-weight: 100; font-size: 1rem;">У вас уже имеется <a style="font-weight: bold; color: #667eea;" href="#">ссылка</a> на этот ресурс!</div>
+                        <div style="color: rgba(0, 0, 0, 0.5); font-weight: 100; font-size: 1rem;">У вас уже имеется <a style="font-weight: bold; color: #667eea;" href="../links/">ссылка</a> на этот ресурс!</div>
                         <br>
                         <button onclick="location.reload(); return false;" class="btn btn-primary" style="background-color: #667eea;
                         border: 1px solid #6079da;

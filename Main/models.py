@@ -24,10 +24,10 @@ class User(AbstractUser):
 
 class AbbreviatedLink(models.Model):
     owner = models.ForeignKey(User, on_delete=models.PROTECT, null=True)
-    created_time_and_date = models.DateTimeField(auto_now_add=True)
-    parent_link = models.URLField(_('url'), max_length=300)
-    counter = models.PositiveIntegerField(default=0)
-    urlhash = models.CharField(max_length=6, null=True, blank=True, unique=True)
+    created_time_and_date = models.DateTimeField(auto_now_add=True, verbose_name='Время создания')
+    parent_link = models.URLField(max_length=300, verbose_name='URL')
+    counter = models.PositiveIntegerField(default=0, verbose_name='Счетчик')
+    urlhash = models.CharField(max_length=6, null=True, blank=True, unique=True, verbose_name='Персональный код')
 
     @staticmethod
     def id_generator(size=6, chars=string.ascii_uppercase + string.digits):

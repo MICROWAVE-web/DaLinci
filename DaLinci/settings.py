@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'Main.apps.MainConfig',
     'qr_code',
     'crispy_forms',
-    'django_email_verification'
+    'django_email_verification',
+    'django_tables2',
 ]
 
 MIDDLEWARE = [

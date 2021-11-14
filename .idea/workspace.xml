@@ -2,21 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce2d2a41-c1fd-4825-90ac-13b55935c280" name="Changes" comment="8.11.21">
-      <change beforePath="$PROJECT_DIR$/.idea/DaLinci.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DaLinci.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DaLinci/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/DaLinci/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/service.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/service.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/ajax_form.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/ajax_form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/changebtn.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/changebtn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/authentication/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/authentication/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/email/confirm_template.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/email/confirm_template.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/service/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/service/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/service/control-base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/service/control-base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,7 +161,8 @@
       <workItem from="1636573587025" duration="78000" />
       <workItem from="1636638226500" duration="2109000" />
       <workItem from="1636647893703" duration="61000" />
-      <workItem from="1636705050968" duration="10015000" />
+      <workItem from="1636705050968" duration="10621000" />
+      <workItem from="1636853892025" duration="437000" />
     </task>
     <task id="LOCAL-00001" summary="4.11.21">
       <created>1636055867654</created>
@@ -267,7 +255,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636638862115</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="8.11.21">
+      <created>1636719724698</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1636719724698</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'django_email_verification',
     'django_tables2',
+    'chartjs',
 ]
 
 MIDDLEWARE = [

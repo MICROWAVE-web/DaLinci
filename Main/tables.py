@@ -19,6 +19,13 @@ class AbbreviatedLinkTable(tables.Table):
 
 
 class TransitionTable(tables.Table):
+    abbr_link = False
+    time_and_date = tables.columns.DateTimeColumn(format="Y-m-d H:i")
+
     class Meta:
         model = Transition
-        attrs = {'class': 'paleblue'}
+        template_name = 'django_tables2/semantic.html'
+        exclude = ('id',)
+        row_attrs = {
+            "data-id": lambda record: record.pk
+        }

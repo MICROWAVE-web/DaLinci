@@ -45,6 +45,6 @@ class AbbreviatedLink(models.Model):
 
 
 class Transition(models.Model):
-    ip = models.GenericIPAddressField()
-    time_and_date = models.DateTimeField(auto_now_add=True)
+    ip = models.GenericIPAddressField(verbose_name='IP адресс пользователя')
+    time_and_date = models.DateTimeField(auto_now_add=True, verbose_name='Время перехода')
     abbr_link = models.ForeignKey(AbbreviatedLink, on_delete=models.PROTECT)

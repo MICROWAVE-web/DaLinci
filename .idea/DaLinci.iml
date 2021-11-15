@@ -22,6 +22,7 @@
     <orderEntry type="library" name="semantic-ui" level="application" />
     <orderEntry type="library" name="dataTables.semanticui" level="application" />
     <orderEntry type="library" name="buttons.semanticui" level="application" />
+    <orderEntry type="library" name="jquery-1.10.0" level="application" />
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Django" />

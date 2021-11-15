@@ -1,15 +1,33 @@
+import datetime
+from functools import wraps
+
 import django
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView
+from django.db.models import Count
 from django.http import JsonResponse, HttpResponseRedirect, HttpResponseNotFound
 from django.shortcuts import render
 from django.views import View
 from django_email_verification import send_email
 from django_tables2 import RequestConfig
+from qsstats import QuerySetStats
 
 from .forms import UserRegistrationForm, ServiceForm
 from .models import AbbreviatedLink, Transition
-from .tables import AbbreviatedLinkTable
+from .tables import AbbreviatedLinkTable, TransitionTable
+
+
+def authors_only(function):
+    @wraps(function)
+    def wrap(request, urlhash, *args, **kwargs):
+
+        user = request.user.get_profile()
+        if user.email == AbbreviatedLink.objects.get(urlhash=urlhash):
+            return function(request, *args, **kwargs)
+        else:
+            return HttpResponseRedirect('/')
+
+    return wrap
 
 
 class CustomRegView(View):
@@ -76,10 +94,31 @@ class LinksTableView(View):
         RequestConfig(request, paginate={"per_page": 15}).configure(table)
         context = {
             'title': 'DaLinci.com',
-            'form': ServiceForm(),
             'table': table
         }
         return render(request, 'service/links_table.html', context)
+
+
+class LinkDetailView(View):
+    @staticmethod
+    @login_required
+    def get(request, urlhash, *args, **kwargs):
+        start_date = datetime.date.today() - datetime.timedelta(days=7)
+        end_date = datetime.date.today()
+        data = AbbreviatedLink.objects.get(owner__email=request.user.email, urlhash=urlhash)
+        transitions = Transition.objects.filter(abbr_link_id=data.pk)
+        qsstats = QuerySetStats(transitions, date_field='time_and_date')
+        # ...в день за указанный период
+        values = qsstats.time_series(start_date, end_date, interval='days')
+        table = TransitionTable(transitions, template_name='django_tables2/semantic.html')
+        RequestConfig(request, paginate={"per_page": 15}).configure(table)
+        context = {
+            'title': 'DaLinci.com',
+            'link_data': data,
+            'values': values,
+            'transitions': table
+        }
+        return render(request, 'service/detail_link.html', context)
 
 
 def get_hash_link(request, *args, **kwargs):
@@ -88,7 +127,6 @@ def get_hash_link(request, *args, **kwargs):
         try:
             if not request.user.is_authenticated and AbbreviatedLink.objects.filter(
                     parent_link=form.cleaned_data['parent_link'], owner__isnull=True).exists():
-                print('1')
                 abbrlink = AbbreviatedLink.objects.get(parent_link=form.cleaned_data['parent_link'],
                                                        owner__isnull=True)
                 context = {
@@ -96,14 +134,12 @@ def get_hash_link(request, *args, **kwargs):
                     'abbrlink': f'localhost:8000/r/{abbrlink.urlhash}',
                 }
             elif not request.user.is_authenticated:
-                print('2')
                 abbrlink = form.save()
                 context = {
                     'title': 'DaLinci.com',
                     'abbrlink': f'localhost:8000/r/{abbrlink.urlhash}',
                 }
             else:
-                print('3')
                 abbrlink = form.save(commit=False)
                 abbrlink.owner = request.user
                 abbrlink = form.save()

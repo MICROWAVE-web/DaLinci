@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'crispy_forms',
     'django_email_verification',
     'django_tables2',
-    'chartjs',
 ]
 
 MIDDLEWARE = [
@@ -126,6 +125,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'Main.User'
 
 LOGIN_REDIRECT_URL = '/service/'
+
+LOGIN_URL = '/login/'
 
 STATIC_URL = '/static/'
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))

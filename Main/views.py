@@ -10,7 +10,6 @@ from django.shortcuts import render
 from django.views import View
 from django_email_verification import send_email
 from django_tables2 import RequestConfig
-from qsstats import QuerySetStats
 
 from .forms import UserRegistrationForm, ServiceForm
 from .models import AbbreviatedLink, Transition
@@ -107,15 +106,11 @@ class LinkDetailView(View):
         end_date = datetime.date.today()
         data = AbbreviatedLink.objects.get(owner__email=request.user.email, urlhash=urlhash)
         transitions = Transition.objects.filter(abbr_link_id=data.pk)
-        qsstats = QuerySetStats(transitions, date_field='time_and_date')
-        # ...в день за указанный период
-        values = qsstats.time_series(start_date, end_date, interval='days')
         table = TransitionTable(transitions, template_name='django_tables2/semantic.html')
         RequestConfig(request, paginate={"per_page": 15}).configure(table)
         context = {
             'title': 'DaLinci.com',
             'link_data': data,
-            'values': values,
             'transitions': table
         }
         return render(request, 'service/detail_link.html', context)

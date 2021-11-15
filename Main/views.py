@@ -10,6 +10,7 @@ from django.shortcuts import render
 from django.views import View
 from django_email_verification import send_email
 from django_tables2 import RequestConfig
+from django.utils import timezone
 
 from .forms import UserRegistrationForm, ServiceForm
 from .models import AbbreviatedLink, Transition
@@ -102,18 +103,36 @@ class LinkDetailView(View):
     @staticmethod
     @login_required
     def get(request, urlhash, *args, **kwargs):
-        start_date = datetime.date.today() - datetime.timedelta(days=7)
-        end_date = datetime.date.today()
         data = AbbreviatedLink.objects.get(owner__email=request.user.email, urlhash=urlhash)
         transitions = Transition.objects.filter(abbr_link_id=data.pk)
         table = TransitionTable(transitions, template_name='django_tables2/semantic.html')
         RequestConfig(request, paginate={"per_page": 15}).configure(table)
         context = {
             'title': 'DaLinci.com',
+            'urlhash': urlhash,
             'link_data': data,
             'transitions': table
         }
         return render(request, 'service/detail_link.html', context)
+
+
+def count_chart(request, urlhash, *args, **kwargs):
+    labels = []
+    data_chart = []
+    data = AbbreviatedLink.objects.get(owner__email=request.user.email, urlhash=urlhash)
+    for day in reversed(range(0, 8)):
+        day_date = timezone.now() - datetime.timedelta(days=day)
+        transitions = Transition.objects.filter(abbr_link_id=data.pk, time_and_date__date=day_date).count()
+        print(f'{day} - дней назад')
+        print(f'{day_date:"%Y-%m-%d"}')
+        print(f'{transitions} - количество переходов')
+        labels.append(f'{day_date:"%Y-%m-%d"}')
+        data_chart.append(transitions)
+    print(data_chart)
+    return JsonResponse(data={
+        'labels': labels,
+        'data': data_chart,
+    })
 
 
 def get_hash_link(request, *args, **kwargs):

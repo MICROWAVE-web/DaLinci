@@ -26,6 +26,7 @@ urlpatterns = [
     path('service/', ServiceView.as_view(), name='service'),
     path('links/', LinksTableView.as_view(), name='links'),
     path('l/<slug:urlhash>/', LinkDetailView.as_view(), name='link'),
+    path('count_chart/<slug:urlhash>/', count_chart, name='count_chart'),
     path('get_hash_link/', get_hash_link, name='get_hash_link'),
     path('email/', include(email_urls)),
     path('test/', test, name='test'),

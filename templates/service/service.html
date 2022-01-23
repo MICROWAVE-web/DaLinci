@@ -26,7 +26,7 @@
                 <input type="hidden" name="next" value="{{ next }}">
                 <div class="relative mr-6 my-2 flex flex-row" style="display: inline-flex;">
                     {{ form|crispy }}
-                    <button class='button_close' type="reset">✖</button>
+                    <button class='button_close' type="reset">✕</button>
                 </div>
                 <br>
                 <br>
@@ -57,11 +57,11 @@
                   d="M0,256L48,240C96,224,192,192,288,186.7C384,181,480,203,576,218.7C672,235,768,245,864,213.3C960,181,1056,107,1152,112C1248,117,1344,203,1392,245.3L1440,288L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
         </svg>
     </div>
-    <div class="curved-div-vh-auto flex flex-col items-center w-full">
+    <div class="mobile_dialog curved-div-vh-auto flex flex-col items-center w-full">
         <br>
         <br>
         <br>
-        <div class="curved-div-inner-dialog">
+        <div class="curved-div-inner-dialog ">
             <img class='dialog_part_right' src="{% static 'icons/part_1-1.jpg' %}" alt="part_1">
             <img class='dialog_part_left' src="{% static 'icons/part_2-1.jpg' %}" alt="part_1">
             <img class='dialog_part_right' src="{% static 'icons/part_3-1.jpg' %}" alt="part_1">
@@ -80,7 +80,7 @@
         <br>
         <br>
         <br>
-        <div style="color: rgba(0, 0, 0, 0.5); font-weight: 100; font-size: 1rem;">На короткие и
+        <div style="color: rgba(0, 0, 0, 0.5); font-weight: 200; font-size: 20px;">На короткие и
             удобные ссылки нажимают чаще на 30%
         </div>
         <br>

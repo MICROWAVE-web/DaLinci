@@ -7,7 +7,7 @@ from django.contrib.auth.base_user import AbstractBaseUser
 from django.contrib.auth.models import AbstractUser
 from django.contrib.auth.models import PermissionsMixin
 from django.db import models
-from django.utils.translation import ugettext_lazy as _  # Почитать
+# from django.utils.translation import ugettext_lazy as _  # Почитать
 
 
 class User(AbstractUser):
@@ -15,8 +15,8 @@ class User(AbstractUser):
     first_name = None
     last_name = None
     date_joined = None
-    email = models.EmailField(_('email address'), unique=True)
-    password = models.CharField(_('password'), max_length=50)
+    email = models.EmailField(unique=True)
+    password = models.CharField(max_length=50)
     reg_time_and_date = models.DateTimeField(auto_now_add=True)
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['is_superuser', 'last_login']

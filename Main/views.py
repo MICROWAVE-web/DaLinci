@@ -7,10 +7,10 @@ from django.contrib.auth.views import LoginView
 from django.db.models import Count
 from django.http import JsonResponse, HttpResponseRedirect, HttpResponseNotFound
 from django.shortcuts import render
+from django.utils import timezone
 from django.views import View
 from django_email_verification import send_email
 from django_tables2 import RequestConfig
-from django.utils import timezone
 
 from .forms import UserRegistrationForm, ServiceForm
 from .models import AbbreviatedLink, Transition
@@ -123,12 +123,12 @@ def count_chart(request, urlhash, *args, **kwargs):
     for day in reversed(range(0, 8)):
         day_date = timezone.now() - datetime.timedelta(days=day)
         transitions = Transition.objects.filter(abbr_link_id=data.pk, time_and_date__date=day_date).count()
-        print(f'{day} - дней назад')
-        print(f'{day_date:"%Y-%m-%d"}')
-        print(f'{transitions} - количество переходов')
+        # print(f'{day} - дней назад')
+        # print(f'{day_date:"%Y-%m-%d"}')
+        # print(f'{transitions} - количество переходов')
         labels.append(f'{day_date:"%Y-%m-%d"}')
         data_chart.append(transitions)
-    print(data_chart)
+    # print(data_chart)
     return JsonResponse(data={
         'labels': labels,
         'data': data_chart,

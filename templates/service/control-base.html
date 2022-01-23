@@ -16,36 +16,60 @@
     <script>
         let is_authenticated = "{{ request.user.is_authenticated }}";
     </script>
+    <script>
+        $(document).ready(function() {
+        $('#passport_block')
+        .on('mouseenter', function() {
+            $('#hidden').show()
+            $('#showing').hide()
+            $('#showing_ico').hide()
+            $(this).css('background-color', '#de6262');
+            $(this).css('color', '#edf2f7');
+        })
+        .on('mouseleave', function() {
+            $('#hidden').hide()
+            $('#showing').show()
+            $('#showing_ico').show()
+            $(this).css('background-color', '#edf2f7');
+            $(this).css('color', '#000');
+        })
+        .on('click', function() {
+        if (confirm('Вы уверены, что хотите выйти из учётной записи?')) {
+            window.location.replace("{% url 'logout' %}");
+        }
+        });
+        });
+    </script>
     <title>{{ title }}</title>
     {% block meta %}
     {% endblock %}
 </head>
 
-<body class="flex w-screen h-screen space-x-6 bg-gray-300" style="padding: 10px;">
+<body class="mobile_flex flex w-screen h-screen space-x-6 bg-gray-300" style="padding: 10px; Overflow-x: hidden;">
 
-	<div class="flex flex-col items-center h-full overflow-hidden text-gray-700 bg-gray-100 rounded" id='menyoo' style="width: 200px;">
-		<a class="flex items-center w-full px-3 mt-3" href="#">
+	<div class="flex flex-col items-center h-full text-gray-700 bg-gray-100 rounded" id='menyoo'>
+		<a class="ico_mobile flex items-center w-full px-3 mt-3" href="#">
 			<svg class="w-8 h-8 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
 				<path d="M11 17a1 1 0 001.447.894l4-2A1 1 0 0017 15V9.236a1 1 0 00-1.447-.894l-4 2a1 1 0 00-.553.894V17zM15.211 6.276a1 1 0 000-1.788l-4.764-2.382a1 1 0 00-.894 0L4.789 4.488a1 1 0 000 1.788l4.764 2.382a1 1 0 00.894 0l4.764-2.382zM4.447 8.342A1 1 0 003 9.236V15a1 1 0 00.553.894l4 2A1 1 0 009 17v-5.764a1 1 0 00-.553-.894l-4-2z"/>
 			</svg>
 			<span class="ml-2 text-sm font-bold">DaLinci.com</span>
 		</a>
 		<div class="w-full px-2" id="buttons_list">
-			<div class="flex flex-col items-center w-full mt-3 border-t border-gray-300">
-				<a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-300" href="{% url 'service' %}?index=0">
-					<img class="w-6 h-6 stroke-current" src="{% static 'icons/home.png' %}" alt="links">
-					<span class="ml-2 text-sm font-medium">Главная</span>
+			<div class="mobile_buttons_list flex flex-col items-center w-full mt-3 border-t border-gray-300">
+				<a class="mobile_href flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-300" href="{% url 'service' %}?index=0">
+					<img class="mobile_href_ico w-6 h-6 stroke-current" src="{% static 'icons/home.png' %}" alt="links">
+					<span id='mobile_spans' class="ml-2 text-sm font-medium">Главная</span>
 				</a>
-				<a class="flex items-center w-full h-12 px-3 mt-2 hover:bg-gray-300 rounded" href="{% url 'service' %}?index=1">
-					<img class="w-6 h-6 stroke-current" src="{% static 'icons/statistics.png' %}" alt="links">
-					<span class="ml-2 text-sm font-medium">Статистика</span>
+				<a class="mobile_href flex items-center w-full h-12 px-3 mt-2 hover:bg-gray-300 rounded" href="{% url 'links' %}?index=2">
+					<img class="mobile_href_ico w-6 h-6 stroke-current" src="{% static 'icons/statistics.png' %}" alt="links">
+					<span id='mobile_spans' class="ml-2 text-sm font-medium">Статистика</span>
 				</a>
-				<a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-300" href="{% url 'links' %}?index=2">
-					<img class="w-6 h-6 stroke-current" src="{% static 'icons/link_svg.svg' %}" alt="links">
-					<span class="ml-2 text-sm font-medium">Ссылки</span>
+				<a class="mobile_href flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-300" href="{% url 'links' %}?index=2">
+					<img class="mobile_href_ico w-6 h-6 stroke-current" src="{% static 'icons/link_svg.svg' %}" alt="links">
+					<span id='mobile_spans' class="ml-2 text-sm font-medium">Ссылки</span>
 				</a>
 			</div>
-			<div class="flex flex-col items-center w-full mt-2 border-t border-gray-300">
+			<!-- <div class="flex flex-col items-center w-full mt-2 border-t border-gray-300">
 				<a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-300" href="#">
 					<img class="w-6 h-6 stroke-current" src="{% static 'icons/settings.png' %}" alt="links">
 					<span class="ml-2 text-sm font-medium">Настройки</span>
@@ -55,23 +79,23 @@
 					<span class="ml-2 text-sm font-medium">Сообщения</span>
 					<span class="absolute top-0 left-0 w-2 h-2 mt-2 ml-2 bg-indigo-500 rounded-full"></span>
 				</a>
-			</div>
+			</div> -->
 		</div>
         {% if user.is_authenticated %}
-        <a class="flex items-center justify-center w-full h-16 mt-auto bg-gray-200 hover:bg-gray-300" href="#">
-			<svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <a id='passport_block' class="flex items-center justify-center w-full h-16 mt-auto bg-gray-200 hover:bg-gray-300" href="#">
+			<svg id='showing_ico' class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
 			</svg>
-			<div class="ml-2 text-sm font-medium" style="text-overflow: ellipsis; max-width: 80px; overflow: hidden;">{{ user.email }}</div>
+            <div class="mobile_logout ml-2 text-sm font-medium" style="text-overflow: ellipsis; max-width: 80px; overflow: hidden;"><div id='showing'>{{ user.email }}</div><div id='hidden' style="display: none">Выйти</div></div>
 		</a>
         {% else %}
 		<a class="flex items-center justify-center w-full h-16 mt-auto bg-gray-200 hover:bg-gray-300" href="{% url 'login' %}">
 			<img class="w-6 h-6 stroke-current" src="{% static 'icons/user.png' %}" alt="links">
-			<span class="ml-2 text-sm font-medium">Войти</span>
+			<span id='mobile_spans' class="ml-2 text-sm font-medium">Войти</span>
 		</a>
         {% endif %}
 	</div>
-    <div class="flex flex-col items-center w-full h-full rounded" style="overflow-y: scroll;">
+    <div class="mobile_main_display flex flex-col items-center w-full rounded" style="overflow-y: scroll;">
         {% block enterblock %}
         {% endblock %}
     </div>

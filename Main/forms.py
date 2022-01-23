@@ -20,7 +20,7 @@ class UserRegistrationForm(forms.ModelForm):
 
 
 class ServiceForm(forms.ModelForm):
-    parent_link = forms.CharField(max_length=300, widget=forms.URLInput(attrs={'class': 'bg-purple-white shadow rounded border-0 p-3 form_input', 'placeholder': 'Введите ссылку'}), label='')
+    parent_link = forms.CharField(max_length=300, widget=forms.URLInput(attrs={'class': 'bg-purple-white shadow rounded border-0 p-3 form_input mobile_form_input', 'placeholder': 'Введите ссылку'}), label='')
 
     class Meta:
         model = AbbreviatedLink

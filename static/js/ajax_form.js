@@ -28,6 +28,7 @@ $(document).ready(function () {
                             <div class="text-center" style="font-weight: bold; font-size: 30px; color: #667eea;">
                             <div style="color: rgba(0, 0, 0, 0.5); font-weight: 100; font-size: 20px;">Ваша ссылка</div>` + data["abbrlink"] + `</div>
                             <br>
+                            <div style="font-weight: bold; font-size: 30px; color: black;">Ваш QR код</div>
                             <div class="qrcode" id="qr" style="height: auto; width: auto;"></div>
                             <br>
                             <div style="color: rgba(0, 0, 0, 0.5); font-weight: 100; font-size: 20px;">Вы можете посмотреть статистику вашей сcылки в разделе <a href="#"><div class="text-center" style="font-weight: bold; font-size: 30px; color: #667eea;">Cтатистика</div></a></div>

@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django_email_verification import urls as email_urls
+from django.contrib.auth.views import LogoutView
+from django.conf import settings
 
 from .views import *  # optimize
 
@@ -31,4 +33,5 @@ urlpatterns = [
     path('email/', include(email_urls)),
     path('test/', test, name='test'),
     path('r/<slug:urlhash>/', link_redirect, name='redirect'),
+    path('logout/', LogoutView.as_view(), {'next_page': settings.LOGOUT_REDIRECT_URL}, name='logout'),
 ]

@@ -98,18 +98,163 @@ button::-moz-focus-inner {
     align-content: center;
 }
 #menyoo a {
-    color: black !important;
+    color: black;
     transition: 0.2s;
     text-decoration: none;
 }
 #menyoo a:active {
-    color: #667eea !important;
+    color: #667eea;
 }
 #menyoo a:hover {
-    color: #667eea !important;
+    color: #667eea;
 }
 
 table a {
     color: #667eea !important;
     text-decoration: none;
 }
+
+
+html {
+        overflow: hidden;
+        position: relative;
+}
+
+/* MOBILE CSS VERSION */
+@media (max-width: 1000px) and (orientation: portrait) {
+    .mobile_flex {
+        display: flex;
+        flex-direction: column-reverse;
+        position: relative;
+        max-height: 100vh !important;
+        width: 100% !important;
+        position: relative;
+        padding: 0 !important;
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
+    #menyoo {
+        width: -webkit-fill-available;
+        flex-direction: row !important;
+        overflow: hidden;
+        height: 65px;
+        display: flex;
+        position: fixed;
+        align-items: center;
+        bottom: 0;
+        left: 0;
+    }
+    .ico_mobile {
+        display: none;
+    }
+    .mobile_buttons_list {
+        border-top-width: 0;
+        flex-direction: row !important;
+        margin: unset !important;
+    }
+    #mobile_spans {
+        display: none;
+    }
+    #passport_block {
+        margin: unset !important;
+        background-color: transparent;
+        width: 30%;
+        border-radius: 0.25rem;
+        height: 3rem;
+        margin-right: 0.5rem!important;
+    }
+    #showing {
+        display: none;
+    }
+    .mobile_href {
+        margin: unset !important;
+    }
+    .mobile_href_ico {
+        margin: 0 auto!important;
+    }
+    .mobile_logout {
+        margin: unset !important;
+    }
+    .mobile_main_display {
+       margin: unset !important;
+    }
+    .mobile_form_input {
+        width: 300px !important;
+    }
+    .mobile_dialog {
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .dialog_part_right {
+        max-width: 400px;
+        margin-left: auto;
+    }
+    .dialog_part_left {
+        max-width: 400px;
+        margin-right: auto;
+    }
+    .container {
+        padding: 0 !important;
+    }
+    .orderable {
+        background-color : #e2e8f0 !important;
+        border-radius : 10px !important;
+        padding: 20px !important;
+        margin-top: 10px !important;
+        margin-bottom: 10px !important;
+        margin-right: 30px !important;
+    }
+    .orderable a{
+        padding: 20px !important;
+        margin: 10px !important;
+        font-size : 18px !important;
+        font-weight : 100 !important;
+    }
+    tr {
+        margin-left: 40px;
+        display: flex;
+        flex-direction: column !important;
+    }
+    .ui.right.floated.menu {
+        float: left !important;
+        margin-top: 35px !important;
+        margin-bottom: 35px !important;
+    }
+    td {
+        max-width: 250px;
+        width: 250px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    table {
+        width: 100%;
+        border: 0;
+        align: center;
+        cellpadding: 0;
+        overflow-x: scroll;
+        table-layout: fixed;
+    }
+    #count_chart {
+        width: 100% !important;
+        height: 350px !important;
+    }
+    #container {
+        width: 100% !important;
+    }
+}
+/* MOBILE CSS VERSION landscape */
+@media (max-width: 1000px) and (orientation: landscape) {
+    .mobile_flex {}
+    #menyoo {
+        width: 200px;
+    }
+}
+
+/* PC CSS VERSION */
+@media (min-width: 1000px) {
+    #menyoo {
+        width: 200px;
+    }
+}
+

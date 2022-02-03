@@ -11,6 +11,11 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
 from pathlib import Path
+import environ
+
+FindEnv = environ.Env()
+# reading .env file
+environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -40,6 +45,8 @@ INSTALLED_APPS = [
     'crispy_forms',
     'django_email_verification',
     'django_tables2',
+    'phonenumber_field',
+    "phone_verify",
 ]
 
 MIDDLEWARE = [
@@ -139,7 +146,7 @@ def verified_callback(user):
     user.is_active = True
 
 
-EMAIL = 'playalexei@yandex.ru'
+EMAIL = FindEnv('EMAIL')
 EMAIL_VERIFIED_CALLBACK = verified_callback
 EMAIL_FROM_ADDRESS = EMAIL
 EMAIL_MAIL_SUBJECT = 'Confirm your email'
@@ -150,12 +157,16 @@ EMAIL_PAGE_TEMPLATE = 'email/confirm_template.html'
 EMAIL_PAGE_DOMAIN = 'http://localhost:8000/'
 
 # For Django Email Backend
-EMAIL_HOST = 'smtp.yandex.ru'
-EMAIL_PORT = 587
+EMAIL_HOST = FindEnv('EMAIL_HOST')
+EMAIL_PORT = FindEnv('EMAIL_PORT')
 EMAIL_HOST_USER = EMAIL
 DEFAULT_FROM_EMAIL = EMAIL
-EMAIL_HOST_PASSWORD = 'qjpsgqguasrvmwjq'
-EMAIL_USE_TLS = True
-EMAIL_USE_SSL = False
+EMAIL_HOST_PASSWORD = FindEnv('EMAIL_HOST_PASSWORD')
+EMAIL_USE_TLS = eval(FindEnv('EMAIL_USE_TLS'))
+EMAIL_USE_SSL = eval(FindEnv('EMAIL_USE_SSL'))
 
 LOGOUT_REDIRECT_URL = 'service'
+
+TWILIO_ACCOUNT_SID = FindEnv('TWILIO_ACCOUNT_SID')
+TWILIO_AUTH_TOKEN = FindEnv('TWILIO_AUTH_TOKEN')
+TWILIO_NUMBER = FindEnv('TWILIO_NUMBER')

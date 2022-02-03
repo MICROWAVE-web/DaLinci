@@ -242,6 +242,9 @@ html {
     #container {
         width: 100% !important;
     }
+    .mobile_fix_account {
+        width: 33.333333% !important;
+    }
 }
 /* MOBILE CSS VERSION landscape */
 @media (max-width: 1000px) and (orientation: landscape) {

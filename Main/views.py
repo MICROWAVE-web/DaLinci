@@ -1,33 +1,21 @@
 import datetime
-from functools import wraps
 
 import django
+from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView
 from django.db.models import Count
 from django.http import JsonResponse, HttpResponseRedirect, HttpResponseNotFound
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.utils import timezone
 from django.views import View
 from django_email_verification import send_email
 from django_tables2 import RequestConfig
 
-from .forms import UserRegistrationForm, ServiceForm
-from .models import AbbreviatedLink, Transition
+from .forms import UserRegistrationForm, ServiceForm, SMSForm
+from .models import AbbreviatedLink, Transition, User
 from .tables import AbbreviatedLinkTable, TransitionTable
-
-
-def authors_only(function):
-    @wraps(function)
-    def wrap(request, urlhash, *args, **kwargs):
-
-        user = request.user.get_profile()
-        if user.email == AbbreviatedLink.objects.get(urlhash=urlhash):
-            return function(request, *args, **kwargs)
-        else:
-            return HttpResponseRedirect('/')
-
-    return wrap
+from .utils import MessageClient
 
 
 class CustomRegView(View):
@@ -37,14 +25,30 @@ class CustomRegView(View):
         if form.is_valid():
             user = form.save(commit=False)
             user.set_password(form.cleaned_data['password'])
+            user.is_active = False
             user = form.save()
-            send_email(user)
-            context = {
-                'replaceMessage': 'Подтверждение регистрации отправлено на почту '
-                                  f'{form.cleaned_data["email"]}',
-                'title': 'DaLinci.com - Регистрация'
-            }
-            return render(request, 'authentication/go_mail.html', context)
+            if form.cleaned_data['type_of_confirmation'] == 'sms':
+                mc = MessageClient()
+                mc.send_message(
+                    body=f"DaLinci.com. Verification code - {user.personal_sms_code}. "
+                         "Thank you for using our service! ♥",
+                    to=str(form.cleaned_data['phone']))
+                context = {
+                    'title': 'DaLinci.com - Регистрация',
+                    'center_text': f'Подтверждение номера телефона - {form.cleaned_data["phone"]}',
+                    'button_text': 'Подтвердить',
+                    'form': SMSForm(),
+                    'user_pk': user.pk,
+                }
+                return render(request, 'authentication/sms_verification.html', context)
+            else:
+                send_email(user)
+                context = {
+                    'replaceMessage': 'Подтверждение регистрации отправлено на почту '
+                                      f'{form.cleaned_data["email"]}',
+                    'title': 'DaLinci.com - Регистрация'
+                }
+                return render(request, 'authentication/go_mail.html', context)
         else:
             context = {
                 'center_text': 'Регистрация',
@@ -52,7 +56,7 @@ class CustomRegView(View):
                 'button_text': 'Продолжить',
                 'form': form
             }
-            return render(request, 'authentication/login.html', context)
+            return render(request, 'authentication/reg.html', context)
 
     @staticmethod
     def get(request, *args, **kwargs):
@@ -62,7 +66,29 @@ class CustomRegView(View):
             'button_text': 'Продолжить',
             'form': UserRegistrationForm()
         }
-        return render(request, 'authentication/login.html', context)
+        return render(request, 'authentication/reg.html', context)
+
+
+def sms_verification(request, user_pk):
+    user = User.objects.get(pk=user_pk)
+    if not user:
+        return HttpResponseNotFound
+    form = SMSForm(request.POST)
+    if form.is_valid():
+        if form.cleaned_data['personal_sms_code'] == user.personal_sms_code:
+            user.is_active = True
+            user.save()
+            login(request, user)
+            return redirect('service')
+        else:
+            context = {
+                'title': 'DaLinci.com - Регистрация',
+                'center_text': f'Подтверждение номера телефона - {form.cleaned_data["phone"]}',
+                'button_text': 'Подтвердить',
+                'form': SMSForm(),
+                'user_pk': user_pk,
+            }
+            return render(request, 'authentication/sms_verification.html', context)
 
 
 class CustomLoginView(LoginView):

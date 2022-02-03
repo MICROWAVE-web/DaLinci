@@ -89,7 +89,7 @@
             <div class="mobile_logout ml-2 text-sm font-medium" style="text-overflow: ellipsis; max-width: 80px; overflow: hidden;"><div id='showing'>{{ user.email }}</div><div id='hidden' style="display: none">Выйти</div></div>
 		</a>
         {% else %}
-		<a class="flex items-center justify-center w-full h-16 mt-auto bg-gray-200 hover:bg-gray-300" href="{% url 'login' %}">
+		<a class="flex mobile_fix_account items-center justify-center w-full h-16 mt-auto bg-gray-200 hover:bg-gray-300" href="{% url 'login' %}">
 			<img class="w-6 h-6 stroke-current" src="{% static 'icons/user.png' %}" alt="links">
 			<span id='mobile_spans' class="ml-2 text-sm font-medium">Войти</span>
 		</a>

@@ -1,0 +1,22 @@
+{% extends  'authentication/base.html' %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
+
+{% block main %}
+    <div class="card" style="width: 310px; margin: 0 auto;">
+        <div class="card-body">
+            <h4 class="card-title">{{ center_text }}</h4>
+
+            <form method="post">
+                {% csrf_token %}
+                <input type="hidden" name="next" value="{{ next }}">
+                {{ form|crispy }}
+                <br>
+                <div class="row-md-6">
+                    <button type="submit" class="btn btn-primary">{{ button_text }}</button>
+                    <a href='{% url 'service' %}' class="btn btn-primary">На главную</a>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

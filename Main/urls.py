@@ -25,6 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/', CustomLoginView.as_view(), name='login'),
     path('reg/', CustomRegView.as_view(), name='registration'),
+    path('sms_verification/<slug:user_pk>/', sms_verification, name='sms_verification'),
     path('service/', ServiceView.as_view(), name='service'),
     path('links/', LinksTableView.as_view(), name='links'),
     path('l/<slug:urlhash>/', LinkDetailView.as_view(), name='link'),

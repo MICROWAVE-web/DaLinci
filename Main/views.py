@@ -221,5 +221,11 @@ def link_redirect(request, urlhash):
         return HttpResponseNotFound("404")
 
 
-def test(request):
-    return render(request, 'service/service.html')
+def link_delete(request, urlhash):
+    redirect_obj = AbbreviatedLink.objects.get(urlhash=urlhash)
+    redirect_obj.delete()
+    return redirect('links')
+
+
+def page_not_found_view(request, exception):
+    return render(request, 'exception/404.html', status=404)

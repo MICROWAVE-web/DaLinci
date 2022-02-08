@@ -16,6 +16,9 @@
                     <button type="submit" class="btn btn-primary">{{ button_text }}</button>
                     <a href='{% url 'service' %}' class="btn btn-primary">На главную</a>
                 </div>
+                <div style="padding-top: 30px;">
+                    Уже есть аккаунт? <a href="{% url 'login' %}">Войти</a>
+                </div>
             </form>
         </div>
     </div>

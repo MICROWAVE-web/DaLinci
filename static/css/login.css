@@ -2,6 +2,7 @@ html {
     font-size: 16px;
 }
 input {
+    margin-left: 5px;
     padding-left: 5px;
 }
 strong {

@@ -21,18 +21,24 @@ from django.conf import settings
 
 from .views import *  # optimize
 
+
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/', CustomLoginView.as_view(), name='login'),
-    path('reg/', CustomRegView.as_view(), name='registration'),
+    path('registration/', CustomRegView.as_view(), name='registration'),
     path('sms_verification/<slug:user_pk>/', sms_verification, name='sms_verification'),
     path('service/', ServiceView.as_view(), name='service'),
     path('links/', LinksTableView.as_view(), name='links'),
+    path('d/<slug:urlhash>/', link_delete, name='link_delete'),
     path('l/<slug:urlhash>/', LinkDetailView.as_view(), name='link'),
     path('count_chart/<slug:urlhash>/', count_chart, name='count_chart'),
     path('get_hash_link/', get_hash_link, name='get_hash_link'),
     path('email/', include(email_urls)),
-    path('test/', test, name='test'),
+    # path('test/', test, name='test'),
     path('r/<slug:urlhash>/', link_redirect, name='redirect'),
     path('logout/', LogoutView.as_view(), {'next_page': settings.LOGOUT_REDIRECT_URL}, name='logout'),
 ]
+
+

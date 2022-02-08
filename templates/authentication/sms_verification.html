@@ -7,7 +7,7 @@
         <div class="card-body">
             <h4 class="card-title">{{ center_text }}</h4>
 
-            <form method="post">
+            <form method="post" action="{% url 'sms_verification' user_pk=user_pk %}">
                 {% csrf_token %}
                 <input type="hidden" name="next" value="{{ next }}">
                 {{ form|crispy }}
@@ -15,9 +15,6 @@
                 <div class="row-md-6">
                     <button type="submit" class="btn btn-primary">{{ button_text }}</button>
                     <a href='{% url 'service' %}' class="btn btn-primary">На главную</a>
-                </div>
-                <div style="padding-top: 30px;">
-                    Нет аккаунта? <a href="{% url 'registration' %}">Зарегистрироваться</a>
                 </div>
             </form>
         </div>

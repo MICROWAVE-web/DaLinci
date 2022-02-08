@@ -89,6 +89,7 @@ button::-moz-focus-inner {
 .down-arrow:hover {
     cursor: pointer;
 }
+
 .qrcode {
     height: auto;
     width: auto;
@@ -97,14 +98,17 @@ button::-moz-focus-inner {
     justify-content: center;
     align-content: center;
 }
+
 #menyoo a {
     color: black;
     transition: 0.2s;
     text-decoration: none;
 }
+
 #menyoo a:active {
     color: #667eea;
 }
+
 #menyoo a:hover {
     color: #667eea;
 }
@@ -116,8 +120,8 @@ table a {
 
 
 html {
-        overflow: hidden;
-        position: relative;
+    overflow: hidden;
+    position: relative;
 }
 
 /* MOBILE CSS VERSION */
@@ -133,6 +137,7 @@ html {
         overflow-x: hidden;
         overflow-y: scroll;
     }
+
     #menyoo {
         width: -webkit-fill-available;
         flex-direction: row !important;
@@ -143,90 +148,109 @@ html {
         align-items: center;
         bottom: 0;
         left: 0;
+        z-index: 5;
     }
+
     .ico_mobile {
         display: none;
     }
+
     .mobile_buttons_list {
         border-top-width: 0;
         flex-direction: row !important;
         margin: unset !important;
     }
+
     #mobile_spans {
         display: none;
     }
+
     #passport_block {
         margin: unset !important;
         background-color: transparent;
         width: 30%;
         border-radius: 0.25rem;
         height: 3rem;
-        margin-right: 0.5rem!important;
+        margin-right: 0.5rem !important;
     }
+
     #showing {
         display: none;
     }
+
     .mobile_href {
         margin: unset !important;
     }
+
     .mobile_href_ico {
-        margin: 0 auto!important;
+        margin: 0 auto !important;
     }
+
     .mobile_logout {
         margin: unset !important;
     }
+
     .mobile_main_display {
-       margin: unset !important;
+        margin: unset !important;
     }
+
     .mobile_form_input {
-        width: 300px !important;
+        width: -moz-available !important;
+        max-width: calc(0.8 * 100vw) !important;
     }
+
     .mobile_dialog {
         padding-right: 0;
         padding-left: 0;
     }
+
     .dialog_part_right {
         max-width: 400px;
         margin-left: auto;
     }
+
     .dialog_part_left {
         max-width: 400px;
         margin-right: auto;
     }
+
     .container {
         padding: 0 !important;
     }
+
     .orderable {
-        background-color : #e2e8f0 !important;
-        border-radius : 10px !important;
+        background-color: #fff !important;
+        border-radius: 10px !important;
         padding: 20px !important;
-        margin-top: 10px !important;
-        margin-bottom: 10px !important;
         margin-right: 30px !important;
     }
-    .orderable a{
+
+    .orderable a {
         padding: 20px !important;
         margin: 10px !important;
-        font-size : 18px !important;
-        font-weight : 100 !important;
+        font-size: 18px !important;
+        font-weight: 100 !important;
     }
+
     tr {
         margin-left: 40px;
         display: flex;
         flex-direction: column !important;
     }
+
     .ui.right.floated.menu {
         float: left !important;
         margin-top: 35px !important;
         margin-bottom: 35px !important;
     }
+
     td {
         max-width: 250px;
         width: 250px;
-        overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
     }
+
     table {
         width: 100%;
         border: 0;
@@ -237,8 +261,8 @@ html {
     }
     #count_chart {
         width: 100% !important;
-        height: 350px !important;
     }
+
     #container {
         width: 100% !important;
     }
@@ -246,11 +270,15 @@ html {
         width: 33.333333% !important;
     }
 }
+
 /* MOBILE CSS VERSION landscape */
 @media (max-width: 1000px) and (orientation: landscape) {
-    .mobile_flex {}
+    .mobile_flex {
+    }
+
     #menyoo {
         width: 200px;
+        z-index: 5;
     }
 }
 
@@ -258,6 +286,7 @@ html {
 @media (min-width: 1000px) {
     #menyoo {
         width: 200px;
+        z-index: 5;
     }
 }
 

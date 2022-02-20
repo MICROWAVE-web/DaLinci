@@ -22,8 +22,8 @@ class User(AbstractUser):
     email = models.EmailField(verbose_name='Электронная почта', unique=True)
     phone_regex = RegexValidator(regex=r'^\+?1?\d{9,15}$',
                                  message="Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed.")
-    phone = PhoneNumberField(validators=[phone_regex], verbose_name='Номер телефона', null=False, blank=False,
-                             unique=True)
+    # phone = PhoneNumberField(validators=[phone_regex], verbose_name='Номер телефона', null=False, blank=False,
+    #                          unique=True)
     password = models.CharField(verbose_name='Пароль', max_length=50)
     reg_time_and_date = models.DateTimeField(auto_now_add=True)
     personal_sms_code = models.IntegerField(null=True, blank=True)

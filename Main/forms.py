@@ -10,12 +10,13 @@ CHOICES = [('email', ' По электронной почте'),
 class UserRegistrationForm(forms.ModelForm):
     password = forms.CharField(label='Пароль', widget=forms.PasswordInput)
     password2 = forms.CharField(label='Повтор пароля', widget=forms.PasswordInput)
-    type_of_confirmation = forms.ChoiceField(choices=CHOICES, widget=forms.RadioSelect,
-                                             label='Тип подтверждения регистрации:')
+    # type_of_confirmation = forms.ChoiceField(choices=CHOICES, widget=forms.RadioSelect,
+    #                                          label='Тип подтверждения регистрации:')
 
     class Meta:
         model = get_user_model()
-        fields = ('email', 'phone')
+        fields = ('email',)
+        # fields = ('email', 'phone')
 
     def clean_password2(self):
         cd = self.cleaned_data

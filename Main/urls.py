@@ -28,7 +28,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/', CustomLoginView.as_view(), name='login'),
     path('registration/', CustomRegView.as_view(), name='registration'),
-    path('sms_verification/<slug:user_pk>/', sms_verification, name='sms_verification'),
+    # path('sms_verification/<slug:user_pk>/', sms_verification, name='sms_verification'),
     path('service/', ServiceView.as_view(), name='service'),
     path('links/', LinksTableView.as_view(), name='links'),
     path('d/<slug:urlhash>/', link_delete, name='link_delete'),

@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     'django_email_verification',
     'django_tables2',
     'phonenumber_field',
-    "phone_verify",
+#    "phone_verify",
 ]
 
 MIDDLEWARE = [

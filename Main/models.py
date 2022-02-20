@@ -8,7 +8,7 @@ from django.contrib.auth.models import AbstractUser
 from django.contrib.auth.models import PermissionsMixin
 from django.core.validators import RegexValidator
 from django.db import models
-from phonenumber_field.modelfields import PhoneNumberField
+# from phonenumber_field.modelfields import PhoneNumberField
 
 
 # from django.utils.translation import ugettext_lazy as _  # Почитать

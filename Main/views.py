@@ -171,13 +171,13 @@ def get_hash_link(request, *args, **kwargs):
                                                        owner__isnull=True)
                 context = {
                     'title': 'DaLinci.com',
-                    'abbrlink': f'localhost:8000/r/{abbrlink.urlhash}',
+                    'abbrlink': f'dalinci.herokuapp.com/r/{abbrlink.urlhash}',
                 }
             elif not request.user.is_authenticated:
                 abbrlink = form.save()
                 context = {
                     'title': 'DaLinci.com',
-                    'abbrlink': f'localhost:8000/r/{abbrlink.urlhash}',
+                    'abbrlink': f'dalinci.herokuapp.com/r/{abbrlink.urlhash}',
                 }
             else:
                 abbrlink = form.save(commit=False)
@@ -185,7 +185,7 @@ def get_hash_link(request, *args, **kwargs):
                 abbrlink = form.save()
                 context = {
                     'title': 'DaLinci.com',
-                    'abbrlink': f'localhost:8000/r/{abbrlink.urlhash}',
+                    'abbrlink': f'dalinci.herokuapp.com/r/{abbrlink.urlhash}',
                 }
             return JsonResponse(context)
         except django.db.utils.IntegrityError:

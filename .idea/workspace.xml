@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ce2d2a41-c1fd-4825-90ac-13b55935c280" name="Changes" comment="22.02.22 - DEPLOY! 7">
-      <change beforePath="$PROJECT_DIR$/DaLinci/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/DaLinci/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main/urls.py" afterDir="false" />
+    <list default="true" id="ce2d2a41-c1fd-4825-90ac-13b55935c280" name="Changes" comment="22.02.22 - DEPLOY! 8">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -243,7 +242,8 @@
       <workItem from="1644303751888" duration="158000" />
       <workItem from="1644751336327" duration="140000" />
       <workItem from="1645329773048" duration="8810000" />
-      <workItem from="1645522906913" duration="1732000" />
+      <workItem from="1645522906913" duration="2476000" />
+      <workItem from="1645526118448" duration="14000" />
     </task>
     <task id="LOCAL-00001" summary="4.11.21">
       <created>1636055867654</created>
@@ -420,7 +420,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645524056277</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="22.02.22 - DEPLOY! 8">
+      <created>1645524778850</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1645524778850</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -455,7 +462,8 @@
     <MESSAGE value="20.02.22 - DEPLOY! 5" />
     <MESSAGE value="20.02.22 - DEPLOY! 6" />
     <MESSAGE value="22.02.22 - DEPLOY! 7" />
-    <option name="LAST_COMMIT_MESSAGE" value="22.02.22 - DEPLOY! 7" />
+    <MESSAGE value="22.02.22 - DEPLOY! 8" />
+    <option name="LAST_COMMIT_MESSAGE" value="22.02.22 - DEPLOY! 8" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/control_html$solution__11_.coverage" NAME="solution2 Coverage Results" MODIFIED="1643013009476" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Downloads" />

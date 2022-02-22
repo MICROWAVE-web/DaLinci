@@ -24,7 +24,7 @@ class User(AbstractUser):
                                  message="Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed.")
     # phone = PhoneNumberField(validators=[phone_regex], verbose_name='Номер телефона', null=False, blank=False,
     #                          unique=True)
-    password = models.CharField(verbose_name='Пароль', max_length=50)
+    password = models.CharField(verbose_name='Пароль', max_length=1000)
     reg_time_and_date = models.DateTimeField(auto_now_add=True)
     personal_sms_code = models.IntegerField(null=True, blank=True)
     USERNAME_FIELD = 'email'

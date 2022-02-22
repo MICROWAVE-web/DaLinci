@@ -13,23 +13,21 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf import settings
 from django.contrib import admin
+from django.contrib.auth.views import LogoutView
 from django.urls import path, include
 from django_email_verification import urls as email_urls
-from django.contrib.auth.views import LogoutView
-from django.conf import settings
 
 from .views import *  # optimize
 
-
-
-
 urlpatterns = [
+    path('', ServiceView.as_view(), name='service'),
+    path('service/', ServiceView.as_view(), name='service'),
     path('admin/', admin.site.urls),
     path('login/', CustomLoginView.as_view(), name='login'),
     path('registration/', CustomRegView.as_view(), name='registration'),
     # path('sms_verification/<slug:user_pk>/', sms_verification, name='sms_verification'),
-    path('service/', ServiceView.as_view(), name='service'),
     path('links/', LinksTableView.as_view(), name='links'),
     path('d/<slug:urlhash>/', link_delete, name='link_delete'),
     path('l/<slug:urlhash>/', LinkDetailView.as_view(), name='link'),
@@ -40,5 +38,3 @@ urlpatterns = [
     path('r/<slug:urlhash>/', link_redirect, name='redirect'),
     path('logout/', LogoutView.as_view(), {'next_page': settings.LOGOUT_REDIRECT_URL}, name='logout'),
 ]
-
-

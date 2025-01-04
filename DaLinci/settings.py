@@ -149,10 +149,10 @@ STATICFILES_DIRS = [
 def verified_callback(user):
     user.is_active = True
 
-
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL = FindEnv('EMAIL')
 EMAIL_VERIFIED_CALLBACK = verified_callback
-EMAIL_FROM_ADDRESS = EMAIL
+EMAIL_FROM_ADDRESS = FindEnv('EMAIL')
 EMAIL_MAIL_SUBJECT = 'Confirm your email'
 EMAIL_MAIL_HTML = 'email/mail.html'
 EMAIL_MAIL_PLAIN = 'email/mail.txt'

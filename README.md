@@ -1,116 +1,121 @@
+Here’s the translated version of the text:
 
-# DaLinci.com - Сокращатель ссылок с отслеживанием статистики
+---
 
-DaLinci.com - это Django-приложение для сокращения ссылок с возможностью отслеживания статистики и QR-кодов. Приложение поддерживает регистрацию пользователей двумя способами: через электронную почту или по номеру телефона. Пользователь также может создавать персональные сокращенные ссылки и просматривать статистику их использования.
+# DaLinci.com - Link Shortener with Analytics Tracking
 
-## Основные функции
+DaLinci.com is a Django application for shortening links with the ability to track statistics and generate QR codes. The application supports user registration via two methods: email or phone number. Users can also create personalized shortened links and view their usage statistics.
 
-- **Сокращение ссылок:** Генерация уникальных коротких ссылок для длинных URL.
-- **Отслеживание статистики:** Просмотр статистики переходов по каждой ссылке.
-- **Регистрация пользователей:** 
-  - Через электронную почту.
-  - По номеру телефона (с отправкой кода подтверждения).
-- **QR-коды:** Генерация QR-кодов для каждой сокращенной ссылки.
-- **Интуитивно понятный интерфейс:** Современный дизайн с адаптивной вёрсткой.
-- **Управление ссылками:** Удаление или просмотр детальной информации о созданных ссылках.
+## Key Features
 
-## Технологии
+- **Link shortening:** Generation of unique short links for long URLs.
+- **Analytics tracking:** View the statistics of clicks for each link.
+- **User registration:**
+  - Via email.
+  - By phone number (with a confirmation code sent).
+- **QR codes:** Generate QR codes for each shortened link.
+- **User-friendly interface:** Modern design with responsive layout.
+- **Link management:** Delete or view detailed information about created links.
 
-- **Backend:** Django 4.х
-- **Frontend:** Bootstrap 5
-- **База данных:** SQLite (может быть заменена на любую поддерживаемую Django, например PostgreSQL)
-- **Отправка писем:** Yandex SMTP
-- **Аутентификация:** 
-  - Кастомная модель пользователя с авторизацией по email или телефону.
-  - Реализация отправки SMS-кодов для подтверждения номера телефона.
+## Technologies
 
-## Установка
+- **Backend:** Django 4
+- **Frontend:** Jinja2
+- **Database:** SQLite (can be replaced with any Django-supported database, such as PostgreSQL)
+- **Email sending:** Yandex SMTP
+- **Authentication:**
+  - Custom user model with login via email or phone.
+  - SMS code implementation for phone number confirmation.
 
-### Шаг 1: Клонируйте репозиторий
+## Installation
+
+### Step 1: Clone the repository
 ```bash
 git clone https://github.com/your-repository/DaLinci.git
 cd DaLinci
 ```
 
-### Шаг 2: Установите виртуальное окружение
+### Step 2: Set up the virtual environment
 ```bash
 python -m venv venv
-source venv/bin/activate # Для Linux/MacOS
-venv\Scripts\activate    # Для Windows
+source venv/bin/activate # For Linux/MacOS
+venv\Scripts\activate    # For Windows
 ```
 
-### Шаг 3: Установите зависимости
+### Step 3: Install dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-### Шаг 4: Настройте `.env` файл
-Создайте файл `.env` в корне проекта и укажите настройки, например:
+### Step 4: Configure the `.env` file
+Create a `.env` file in the root of the project and specify the settings, for example:
 ```env
-SECRET_KEY=ваш_секретный_ключ
+SECRET_KEY=your_secret_key
 DEBUG=True
 
 
-# Настройки SMTP (для отправки email)
+# SMTP settings (for sending email)
 EMAIL_HOST=smtp.yandex.ru
 EMAIL_PORT=587
-EMAIL_HOST_USER=ваш_email@yandex.ru
-EMAIL_HOST_PASSWORD=ваш_пароль
+EMAIL_HOST_USER=your_email@yandex.ru
+EMAIL_HOST_PASSWORD=your_password
 EMAIL_USE_TLS=True
 ```
 
-### Шаг 5: Выполните миграции
+### Step 5: Apply migrations
 ```bash
 python manage.py migrate
 ```
 
-### Шаг 6: Создайте суперпользователя
+### Step 6: Create a superuser
 ```bash
 python manage.py createsuperuser
 ```
 
-### Шаг 7: Запустите сервер разработки
+### Step 7: Run the development server
 ```bash
 python manage.py runserver
 ```
 
-Перейдите по адресу [http://127.0.0.1:8000](http://127.0.0.1:8000), чтобы начать использовать приложение.
+Visit [http://127.0.0.1:8000](http://127.0.0.1:8000) to start using the application.
 
-## Основные страницы
+## Main Pages
 
-- **Главная страница:** поле для ввода URL и генерации короткой ссылки.
-- **Список ссылок:** список всех созданных ссылок с информацией о статистике.
-- **Статистика:** подробная информация о количестве переходов по ссылкам.
-- **Авторизация:** регистрация и вход через email или номер телефона.
+- **Home page:** A field for entering a URL and generating a short link.
+- **Link list:** A list of all created links with their statistical information.
+- **Statistics:** Detailed information on the number of clicks for each link.
+- **Login:** Registration and login via email or phone number.
 
-## Скриншоты
+## Screenshots
 
-### Главная страница
-![Главная страница](Снимок%20экрана%202025-01-04%20135256.png)
+### Home Page
+![Снимок экрана 2025-01-04 135256](https://github.com/user-attachments/assets/fe183e8e-3c8c-46d3-9ceb-b251a45b4b3f)
 
-### Список ссылок
-![Список ссылок](Снимок%20экрана%202025-01-04%20140046.png)
+### Link List
+![Снимок экрана 2025-01-04 140046](https://github.com/user-attachments/assets/29b950df-6c36-498a-97a2-d901f0c229a4)
 
-## Будущие улучшения
+### Link details
+![Снимок экрана 2025-01-04 140204](https://github.com/user-attachments/assets/1678eebe-fd67-4eda-a156-bcb55ca58ccf)
 
-- Поддержка интеграции с другими сервисами SMS.
-- Добавление API для работы с сокращением ссылок.
-- Улучшение аналитики: геолокация, устройство пользователя и др.
+## Future Improvements
 
-
+- Support for integration with other SMS services.
+- Addition of an API for link shortening.
+- Enhanced analytics: geolocation, user device, etc.
 
 ---
-Разработано с ❤️
 
+Developed with ❤️
 
-### Что включено в `README.md`:
+### What is included in the `README.md`:
 
-1. **Краткое описание проекта.**
-2. **Инструкция по установке:**
-   - Клонирование репозитория.
-   - Настройка виртуального окружения.
-   - Установка зависимостей.
-   - Настройка конфигурации.
-3. **Описание функциональности.**
-4. **Скриншоты:** добавлены изображения, которые вы прислали.
-5. **Будущие улучшения:** план развития.
+1. **Project description.**
+2. **Installation instructions:**
+   - Cloning the repository.
+   - Setting up the virtual environment.
+   - Installing dependencies.
+   - Configuring settings.
+3. **Feature description.**
+4. **Screenshots:** Images you provided are included.
+5. **Future improvements:** Development plan.
+

@@ -34,9 +34,9 @@ class CustomRegView(View):
                          "Thank you for using our service! ♥",
                     to=str(form.cleaned_data['phone']))
                 context = {
-                    'title': 'DaLinci.com - Регистрация',
-                    'center_text': f'Подтверждение номера телефона - {form.cleaned_data["phone"]}',
-                    'button_text': 'Подтвердить',
+                    'title': 'DaLinci.com - Registration',
+                    'center_text': f'Phone number confirmation - {form.cleaned_data["phone"]}',
+                    'button_text': 'Confirm',
                     'form': SMSForm(),
                     'user_pk': user.pk,
                 }
@@ -44,15 +44,15 @@ class CustomRegView(View):
             else:
                 send_email(user)
                 context = {
-                    'replaceMessage': 'Подтверждение регистрации отправлено на почту '
+                    'replaceMessage': 'Confirmation of registration has been sent by email '
                                       f'{form.cleaned_data["email"]}',
-                    'title': 'DaLinci.com - Регистрация'
+                    'title': 'DaLinci.com - Registration'
                 }
                 return render(request, 'authentication/go_mail.html', context)
         else:
             context = {
-                'center_text': 'Регистрация',
-                'title': 'DaLinci.com - Регистрация',
+                'center_text': 'Registration',
+                'title': 'DaLinci.com - Registration',
                 'button_text': 'Продолжить',
                 'form': form
             }
@@ -61,9 +61,9 @@ class CustomRegView(View):
     @staticmethod
     def get(request, *args, **kwargs):
         context = {
-            'center_text': 'Регистрация',
-            'title': 'DaLinci.com - Регистрация',
-            'button_text': 'Продолжить',
+            'center_text': 'Registration',
+            'title': 'DaLinci.com - Registration',
+            'button_text': 'Continue',
             'form': UserRegistrationForm()
         }
         return render(request, 'authentication/reg.html', context)
@@ -82,9 +82,9 @@ def sms_verification(request, user_pk):
             return redirect('service')
         else:
             context = {
-                'title': 'DaLinci.com - Регистрация',
-                'center_text': f'Подтверждение номера телефона - {form.cleaned_data["phone"]}',
-                'button_text': 'Подтвердить',
+                'title': 'DaLinci.com - Registration',
+                'center_text': f'Phone number confirmation - {form.cleaned_data["phone"]}',
+                'button_text': 'Continue',
                 'form': SMSForm(),
                 'user_pk': user_pk,
             }
@@ -95,9 +95,9 @@ class CustomLoginView(LoginView):
     template_name = 'authentication/login.html'
     redirect_authenticated_user = True
     extra_context = {
-        'center_text': 'Вход в личный кабинет',
-        'button_text': 'Войти',
-        'title': 'DaLinci.com - Вход в личный кабинет'
+        'center_text': 'Login to your personal account',
+        'button_text': 'Login',
+        'title': 'DaLinci.com - Login to your personal account'
     }
 
 

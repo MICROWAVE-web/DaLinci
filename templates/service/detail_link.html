@@ -9,10 +9,9 @@
 
         <div class="flex flex-col items-center w-full">
             <h1 class="text-center" style="font-weight: bold; font-size: 50px; color: #667eea;">
-                Детальная статистика по вашей ссылке
+                Detail statistic
             </h1>
-            <div style="color: rgba(0, 0, 0, 0.5); font-weight: 100; font-size: 30px; line-height: initial;">Вы можете
-                нажать на название колонки для изменения сортировки
+            <div style="color: rgba(0, 0, 0, 0.5); font-weight: 100; font-size: 30px; line-height: initial;">You can change sorting by click in cols header
             </div>
             <div id="container" style="width: 75%;">
                 <canvas id="count_chart" data-url="{% url 'count_chart' urlhash %}"></canvas>

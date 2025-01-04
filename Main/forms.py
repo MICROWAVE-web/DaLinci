@@ -3,13 +3,13 @@ from django.contrib.auth import get_user_model
 
 from Main.models import AbbreviatedLink, User
 
-CHOICES = [('email', ' По электронной почте'),
-           ('sms', ' По номеру телефона')]
+CHOICES = [('email', ' By Email'),
+           ('sms', ' By SMS')]
 
 
 class UserRegistrationForm(forms.ModelForm):
-    password = forms.CharField(label='Пароль', widget=forms.PasswordInput)
-    password2 = forms.CharField(label='Повтор пароля', widget=forms.PasswordInput)
+    password = forms.CharField(label='Password', widget=forms.PasswordInput)
+    password2 = forms.CharField(label='Repeat', widget=forms.PasswordInput)
     # type_of_confirmation = forms.ChoiceField(choices=CHOICES, widget=forms.RadioSelect,
     #                                          label='Тип подтверждения регистрации:')
 
@@ -36,8 +36,8 @@ class ServiceForm(forms.ModelForm):
 
 
 class SMSForm(forms.ModelForm):
-    personal_sms_code = forms.IntegerField(widget=forms.NumberInput(attrs={'placeholder': 'Введите код'}),
-                                           label='SMS-код')
+    personal_sms_code = forms.IntegerField(widget=forms.NumberInput(attrs={'placeholder': 'Enter code'}),
+                                           label='SMS-code')
 
     class Meta:
         model = User

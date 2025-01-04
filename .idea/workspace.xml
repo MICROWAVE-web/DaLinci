@@ -1,8 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="ce2d2a41-c1fd-4825-90ac-13b55935c280" name="Changes" comment="23.02.22 - DEPLOY! 11">
+      <change beforePath="$PROJECT_DIR$/.idea/DaLinci.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DaLinci.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Changes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Changes.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DaLinci/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/DaLinci/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/authentication/reg.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/authentication/reg.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/authentication/sms_verification.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/authentication/sms_verification.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/email/confirm_template.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/email/confirm_template.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/service/control-base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/service/control-base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/service/detail_link.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/service/detail_link.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/service/links_table.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/service/links_table.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/service/service.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/service/service.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +52,12 @@
     <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "MICROWAVE-web"
+  }
+}]]></component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
       <filtered-out-file-type name="LOCAL_BRANCH" />
@@ -45,9 +66,18 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/MICROWAVE-web/DaLinci.git",
+    "accountId": "8658cf47-1679-4b6e-8f79-fb9e030688c1"
+  }
+}]]></component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 7
+}]]></component>
   <component name="ProjectId" id="20RrlSsJRajAQNLvR5OBE1a5DJV" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="false" id="Update" />
@@ -57,17 +87,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../Новая папка" />
-    <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "django.template.preview.state": "SHOW_EDITOR_AND_PREVIEW",
+    "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/templates/authentication" />
@@ -83,6 +116,7 @@
     </configuration>
     <configuration name="settings" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="DaLinci" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -105,6 +139,7 @@
     </configuration>
     <configuration name="solution2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="DaLinci" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -127,6 +162,7 @@
     </configuration>
     <configuration name="urls" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="DaLinci" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -149,6 +185,7 @@
     </configuration>
     <configuration name="DaLinci" type="Python.DjangoServer" factoryName="Django server">
       <module name="DaLinci" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -204,6 +241,14 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-PY-241.18034.82" />
+        <option value="bundled-python-sdk-975db3bf15a3-2767605e8bc2-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.18034.82" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -245,6 +290,7 @@
       <workItem from="1645522906913" duration="2476000" />
       <workItem from="1645526118448" duration="97000" />
       <workItem from="1645584544757" duration="2583000" />
+      <workItem from="1735970407168" duration="624000" />
     </task>
     <task id="LOCAL-00001" summary="4.11.21">
       <created>1636055867654</created>

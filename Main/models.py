@@ -19,7 +19,7 @@ class User(AbstractUser):
     first_name = None
     last_name = None
     date_joined = None
-    email = models.EmailField(verbose_name='Электронная почта', unique=True)
+    email = models.EmailField(verbose_name='Email', unique=True)
     phone_regex = RegexValidator(regex=r'^\+?1?\d{9,15}$',
                                  message="Phone number must be: '+999999999'.")
     # phone = PhoneNumberField(validators=[phone_regex], verbose_name='Номер телефона', null=False, blank=False,

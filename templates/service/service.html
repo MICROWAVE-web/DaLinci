@@ -14,7 +14,7 @@
                 DaLinci.com
             </h1>
             <h1 class="text-center" style="font-weight: bold; font-size: 50px; color: #667eea;">
-                Не просто сократитель ссылок
+                Not just a link shortener
             </h1>
         </div>
         <br>
@@ -35,14 +35,15 @@
                     <button type="submit" class="btn btn-primary"
                             style="background-color: #667eea;
                         border: 1px solid #6079da;
-                        font-weight: bold;">Продолжить
+                        font-weight: bold;">Continue
                     </button>
                 </div>
             </form>
             {% if not user.is_authenticated %}
-            <br>
-            <div style="color: rgba(0, 0, 0, 0.5); font-weight: 200; font-size: 20px;">Для получения QR-кодов <a style="color: #667eea;" href="{% url 'login' %}">Войдите</a></div>
-            <br>
+                <br>
+                <div style="color: rgba(0, 0, 0, 0.5); font-weight: 200; font-size: 20px;">To receive QR code <a
+                        style="color: #667eea;" href="{% url 'login' %}">login</a></div>
+                <br>
             {% endif %}
         </div>
     </div>
@@ -80,13 +81,13 @@
         <br>
         <h1 class="text-center"
             style="font-weight: bold; font-size: 30px; color: black; max-width: 800px; margin: 0 auto;">
-            Сокращенные ссылки оптимизируют передачу информации и делают работу более продуктивой.
+            Shortened links optimize the transmission of information and make work more productive.
         </h1>
         <br>
         <br>
         <br>
-        <div style="color: rgba(0, 0, 0, 0.5); font-weight: 200; font-size: 20px;">На короткие и
-            удобные ссылки нажимают чаще на 30%
+        <div style="color: rgba(0, 0, 0, 0.5); font-weight: 200; font-size: 20px;">Short and
+            convenient links are clicked more often by 30%
         </div>
         <br>
         <br>

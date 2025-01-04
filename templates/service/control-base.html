@@ -62,15 +62,15 @@
 			<div class="mobile_buttons_list flex flex-col items-center w-full mt-3 border-t border-gray-300">
 				<a class="mobile_href flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-300" href="{% url 'service' %}?index=0">
 					<img class="mobile_href_ico w-6 h-6 stroke-current" src="{% static 'icons/home.png' %}" alt="links">
-					<span id='mobile_spans' class="ml-2 text-sm font-medium">Главная</span>
+					<span id='mobile_spans' class="ml-2 text-sm font-medium">Home</span>
 				</a>
 				<a class="mobile_href flex items-center w-full h-12 px-3 mt-2 hover:bg-gray-300 rounded" href="{% url 'links' %}?index=2">
 					<img class="mobile_href_ico w-6 h-6 stroke-current" src="{% static 'icons/statistics.png' %}" alt="links">
-					<span id='mobile_spans' class="ml-2 text-sm font-medium">Статистика</span>
+					<span id='mobile_spans' class="ml-2 text-sm font-medium">Statistic</span>
 				</a>
 				<a class="mobile_href flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-300" href="{% url 'links' %}?index=2">
 					<img class="mobile_href_ico w-6 h-6 stroke-current" src="{% static 'icons/link_svg.svg' %}" alt="links">
-					<span id='mobile_spans' class="ml-2 text-sm font-medium">Ссылки</span>
+					<span id='mobile_spans' class="ml-2 text-sm font-medium">Links</span>
 				</a>
 			</div>
 			<!-- <div class="flex flex-col items-center w-full mt-2 border-t border-gray-300">
@@ -90,12 +90,12 @@
 			<svg id='showing_ico' class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
 			</svg>
-            <div class="mobile_logout ml-2 text-sm font-medium" style="text-overflow: ellipsis; max-width: 80px; overflow: hidden;"><div id='showing'>{{ user.email }}</div><div id='hidden' style="display: none">Выйти</div></div>
+            <div class="mobile_logout ml-2 text-sm font-medium" style="text-overflow: ellipsis; max-width: 80px; overflow: hidden;"><div id='showing'>{{ user.email }}</div><div id='hidden' style="display: none">Logout</div></div>
 		</a>
         {% else %}
 		<a class="flex mobile_fix_account items-center justify-center w-full h-16 mt-auto bg-gray-200 hover:bg-gray-300" href="{% url 'login' %}">
 			<img class="w-6 h-6 stroke-current" src="{% static 'icons/user.png' %}" alt="links">
-			<span id='mobile_spans' class="ml-2 text-sm font-medium">Войти</span>
+			<span id='mobile_spans' class="ml-2 text-sm font-medium">Login</span>
 		</a>
         {% endif %}
 	</div>

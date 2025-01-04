@@ -53,7 +53,7 @@ class CustomRegView(View):
             context = {
                 'center_text': 'Registration',
                 'title': 'DaLinci.com - Registration',
-                'button_text': 'Продолжить',
+                'button_text': 'Continue',
                 'form': form
             }
             return render(request, 'authentication/reg.html', context)

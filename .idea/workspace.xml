@@ -4,20 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce2d2a41-c1fd-4825-90ac-13b55935c280" name="Changes" comment="23.02.22 - DEPLOY! 11">
-      <change beforePath="$PROJECT_DIR$/.idea/DaLinci.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DaLinci.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Changes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Changes.xml" afterDir="false" />
+    <list default="true" id="ce2d2a41-c1fd-4825-90ac-13b55935c280" name="Changes" comment="English translation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DaLinci/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/DaLinci/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DaLinci/.env" beforeDir="false" afterPath="$PROJECT_DIR$/DaLinci/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/authentication/reg.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/authentication/reg.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/authentication/sms_verification.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/authentication/sms_verification.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/email/confirm_template.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/email/confirm_template.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/service/control-base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/service/control-base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/service/detail_link.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/service/detail_link.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/service/links_table.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/service/links_table.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/service/service.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/service/service.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -290,7 +282,7 @@
       <workItem from="1645522906913" duration="2476000" />
       <workItem from="1645526118448" duration="97000" />
       <workItem from="1645584544757" duration="2583000" />
-      <workItem from="1735970407168" duration="624000" />
+      <workItem from="1735970407168" duration="1829000" />
     </task>
     <task id="LOCAL-00001" summary="4.11.21">
       <created>1636055867654</created>
@@ -502,7 +494,15 @@
       <option name="project" value="LOCAL" />
       <updated>1645585932966</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="English translation">
+      <option name="closed" value="true" />
+      <created>1735971282139</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1735971282139</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -541,7 +541,8 @@
     <MESSAGE value="22.02.22 - DEPLOY! 9" />
     <MESSAGE value="22.02.22 - DEPLOY! 10" />
     <MESSAGE value="23.02.22 - DEPLOY! 11" />
-    <option name="LAST_COMMIT_MESSAGE" value="23.02.22 - DEPLOY! 11" />
+    <MESSAGE value="English translation" />
+    <option name="LAST_COMMIT_MESSAGE" value="English translation" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/control_html$solution__11_.coverage" NAME="solution2 Coverage Results" MODIFIED="1643013009476" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Downloads" />

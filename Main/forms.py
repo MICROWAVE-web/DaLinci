@@ -3,15 +3,15 @@ from django.contrib.auth import get_user_model
 
 from Main.models import AbbreviatedLink, User
 
-CHOICES = [('email', ' By Email'),
-           ('sms', ' By SMS')]
+CHOICES = [('email', ' email'),
+           ('sms', ' sms')]
 
 
 class UserRegistrationForm(forms.ModelForm):
     password = forms.CharField(label='Password', widget=forms.PasswordInput)
     password2 = forms.CharField(label='Repeat', widget=forms.PasswordInput)
-    # type_of_confirmation = forms.ChoiceField(choices=CHOICES, widget=forms.RadioSelect,
-    #                                          label='Тип подтверждения регистрации:')
+    type_of_confirmation = forms.ChoiceField(choices=CHOICES, widget=forms.RadioSelect,
+                                             label='Type of registration confirmation:')
 
     class Meta:
         model = get_user_model()
@@ -28,7 +28,7 @@ class UserRegistrationForm(forms.ModelForm):
 class ServiceForm(forms.ModelForm):
     parent_link = forms.CharField(max_length=300, widget=forms.URLInput(
         attrs={'class': 'bg-purple-white shadow rounded border-0 p-3 form_input mobile_form_input',
-               'placeholder': 'Введите ссылку'}), label='')
+               'placeholder': 'Enter url'}), label='')
 
     class Meta:
         model = AbbreviatedLink
